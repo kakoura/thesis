@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raphael Sanzio-coins analysis</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/cropper.css">
+
+
+</head>
+
+
+<body>
+
+    <div class="heading">
+        <div class="heading-content">
+            <h1>Raphael Sanzio paintings-coins matching</h1>
+            <p>(Η εφαρμογή παρουσιάζει έναν αυτοματοποιημένο τρόπο εύρεσης μοτίβων ανάμεσα στους πίνακες του Raphael και σε αρχαιοελληνικά/ρωμαϊκά νομίσματα)</p>
+        </div>
+    </div>
+
+    <div class="main-containers">
+        <div class="grid-container">
+            <!-- First column: Small Images Container -->
+            <div class="small-images-container">
+                <h2>1. Select a painting</h2>
+                <div class="image-grid">
+                    <!-- Small images will be displayed here -->
+                </div>
+                
+            </div>
+    
+            <!-- Second column: Expanded Image Container and Coins Container -->
+            <div class="expanded-images-container" >
+                <!-- Expanded Image Container -->
+                <div class="step2-heading" style="display: none;">
+                    <h2>2. Crop the part of the image you want to search</h2>
+                </div>
+                <div class="expanded-image-container">
+                    <div id="cropperContainer">
+                        <img class="expanded-image" src="" alt="Expanded Image">
+                    </div>
+                    <button class="btn1">Search for coins</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="coins-container" style="display:none;">
+    
+    </div>
+    <div class="restartbtn">
+        <button class="toggle-button" style="display:none"></button>
+    </div>
+    
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Decorative Elements -->
+                <div class="footer-decorations">
+                    <div class="decoration-circle"></div>
+                    <div class="decoration-line"></div>
+                    <div class="decoration-circle"></div>
+                </div>
+                <!-- Legal Information -->
+                <div class="legal-info">
+                    <p>&copy; 2023 Raphael Sanzio Paintings</p>
+                    <p>Privacy Policy</p>
+                    <p>Terms of Service</p>
+                </div>
+                <!-- Decorative Elements -->
+                <div class="footer-decorations">
+                    <div class="decoration-circle"></div>
+                    <div class="decoration-line"></div>
+                    <div class="decoration-circle"></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="loading-spinner">
+        <div class="spinner"></div>
+        <div class="loading-text">Searching for Coins...</div>
+    </div>
+
+
+
+
+
+
+
+
+</body>
+<script src="/javascripts/main.js" defer></script>
+<script src="/cropper.js"></script>
+
+</html>

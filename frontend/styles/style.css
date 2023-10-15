@@ -1,0 +1,456 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+/* Center the heading */
+.heading {
+    display: flex;
+    justify-content: center;
+
+}
+
+.heading-content h1 {
+    padding-left: 22%;
+}
+
+h1 {
+    color: #333333;
+    ;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    /* Choose a fun font */
+    font-size: 28px;
+}
+
+h2 {
+    color: #333333;
+    ;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    /* Choose a fun font */
+    font-size: 24px;
+}
+
+/* Center the main content vertically and horizontally */
+.main-containers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+
+/* Grid-like structure */
+.grid-container {
+    /* display: grid; */
+    grid-template-rows: auto 1fr;
+    /* First row: auto (fit content), Second row: remaining space */
+    grid-template-columns: 2fr 4fr;
+    /* Two columns with a ratio of 2:4 */
+    gap: 10px;
+    /* Gap between rows and columns */
+    max-width: 50%;
+    margin-bottom: 40px;
+    /* Center the grid container */
+}
+
+/* Expanded Image Container styles */
+.expanded-image-container {
+    grid-row: 1;
+    /* Placed in the first row */
+    grid-column: 1 / span 2;
+    /* Spans two columns */
+    position: relative;
+    /* To position absolutely within this container */
+    object-fit: contain;
+    z-index: 1;
+    /* Displayed above the other containers */
+    /* background-color: rgba(255, 255, 255, 0.9); */
+    display: none;
+    padding: 20px;
+    max-width: 500px;
+    /* Set the desired width for the container */
+    max-height: 500px;
+    /* Set the desired height for the container */
+    margin: 0 auto;
+    /* Center the container horizontally */
+}
+
+.expanded-image {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Small Images Container styles */
+.image-grid {
+    grid-row: 2;
+    /* Placed in the second row */
+    grid-column: 1;
+    /* Placed in the first column */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Three images in each row */
+    gap: 20px;
+    justify-items: center;
+    /* Center the images horizontally */
+    align-items: center;
+    /* Center the images vertically */
+}
+
+.small-images-container {
+    grid-row: 1 / span 2;
+    /* Spans two rows */
+    grid-column: 1;
+    /* Placed in the first column */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Center the content vertically and horizontally */
+    padding: 20px;
+    background-color: #f0f0f0;
+    max-width: 100%;
+}
+
+.small-image {
+    width: 100%;
+    height: auto;
+    transition: transform 0.2s ease-in-out;
+}
+
+.small-image:hover {
+    transform: scale(1.1);
+}
+
+
+
+
+
+.results-heading {
+    font-size: 24px;
+    /* Adjust the font size as needed */
+    text-align: center;
+    /* Center the text horizontally */
+    margin-bottom: 10px;
+    /* Add some spacing below the heading */
+    position: relative;
+    /* Create a positioning context for the line */
+}
+
+.results-heading::after {
+    content: "";
+    display: block;
+    width: 100%;
+    /* Make the line span the entire width */
+    height: 2px;
+    /* Adjust the line thickness as needed */
+    background-color: #101113;
+    /* Choose a color for the line */
+    position: absolute;
+    /* Position the line absolutely relative to the heading */
+    bottom: 0;
+    /* Position the line at the bottom of the heading */
+    left: 0;
+    /* Position the line to start from the left edge */
+}
+
+
+.coins-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    max-height: 80vh;
+    width: 600px;
+    overflow-y: scroll;
+    background-color: #f0f0f0;
+    padding: 10px;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+    margin-top: 60px;
+
+    scrollbar-width: thin;
+    scrollbar-color: #6e6e6ea5 #f0f0f0;
+    
+
+}
+
+
+
+.coins-container.show-container {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+}
+
+
+.coins-container::-webkit-scrollbar {
+    width: 10px;
+}
+
+.coins-container::-webkit-scrollbar-thumb {
+    background-color: #6e6e6ea5;
+    border-radius: 10px;
+}
+
+.coins-container::-webkit-scrollbar-track {
+    background-color: #f0f0f0;
+}
+
+
+
+
+
+/* Style individual coins */
+.coin {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+.coin img {
+    max-width: 100%;
+    max-height: 200px;
+    /* Adjust as needed */
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.coin .description {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.coin .source {
+    font-size: 16px;
+    color: #007bff;
+    /* Blue color for the source link */
+    text-decoration: none;
+    margin-top: 5px;
+}
+
+.coin .loading-bar-container {
+    width: 100%;
+    height: 10px;
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.coin .loading-bar {
+    height: 100%;
+    background-color: green;
+}
+
+
+
+
+
+
+/* Button style */
+.btn1 {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    float: right;
+    margin-top: 3px;
+}
+
+/* Cropper styles */
+#cropperContainer {
+    position: relative;
+    /* Make the Cropper container positioned relative to this parent */
+    max-width: 100%;
+    max-height: 100%;
+    overflow: hidden;
+    /* Hide any overflowing content within the Cropper container */
+}
+
+.loading-bar-container {
+    width: 100%;
+    height: 10px;
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.loading-bar {
+    width: 0;
+    height: 100%;
+    background-color: green;
+}
+
+.coin.low-score .loading-bar {
+    background-color: red;
+}
+
+/* Expanded Image Container and Coins Container styles */
+.expanded-images-container {
+    grid-row: 1 / span 2;
+    /* Spans two rows */
+    grid-column: 2;
+    /* Placed in the second column */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Center the content vertically and horizontally */
+    padding: 20px;
+    background-color: #f0f0f0;
+    /* Set the desired width ratio */
+    flex: 3;
+}
+
+.hide-container {
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: transform 0.8s ease, opacity 0.5s ease;
+}
+
+
+.restartbtn {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.toggle-button {
+    color: #007bff;
+    /* Blue text color */
+    border: none;
+    padding-bottom: 40px;
+    /* Adjust padding to control arrow size */
+    font-size: 90px;
+    padding-right: 30px;
+    /* Adjust font size to control arrow size */
+    position: relative;
+}
+
+.toggle-button::before {
+    content: "\2190";
+    /* Unicode arrow character for left arrow */
+    position: absolute;
+    left: 0;
+}
+
+/* Hover effect to change the arrow color */
+.toggle-button:hover {
+    color: #0056b3;
+    /* Darker blue color on hover */
+}
+
+
+
+
+
+
+
+
+
+.site-footer {
+    margin-top: 30px;
+    background-color: #333;
+    width: 100%;
+    color: #fff;
+    padding: 20px 0;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.8s, opacity 0.5s;
+    height: 120;
+
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-decorations {
+    display: flex;
+    align-items: center;
+}
+
+.decoration-circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #fff;
+    margin: 5px;
+}
+
+.decoration-line {
+    width: 20px;
+    height: 2px;
+    background-color: #fff;
+}
+
+.legal-info {
+    text-align: center;
+    flex: 1;
+}
+
+.legal-info p {
+    margin: 5px;
+    font-size: 14px;
+}
+
+.legal-info p:last-child {
+    margin-bottom: 0;
+}
+
+
+.loading-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+    display: none;
+}
+
+
+.spinner {
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid #007bff;
+    /* Adjust the color as needed */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 2s linear infinite;
+    margin: 0 auto;
+}
+
+.loading-text {
+    text-align: center;
+    font-size: 16px;
+    color: #007bff;
+    /* Adjust the color as needed */
+    margin-top: 10px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
